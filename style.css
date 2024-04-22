@@ -1,0 +1,61 @@
+/*Using CSS grid to create a quick tic tac toe grid. Sorts the contents of the game--container
+div into 3 equally sized columns. Grid width set to 300px and auto margins to center*/
+.game--container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 300px;
+    margin:  auto;
+}
+
+/*Using flexbox for centered contentin the cells. Setting width to 100px so there's three 
+cells to a row. Height to 100px to make the cells squares. Background and text colors set
+for a Super Mario block theme. Text shadows used to make a text outline. Box shadow added
+to outline the Mario blocks. Cursor changed to a Mario glove.*/
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background-color: #E79C21;
+    color: #9c4a00;
+    text-shadow: 
+        3px 3px 0 #000,
+        -3px 3px 0 #000,
+        -3px -3px 0 #000,
+        3px -3px 0 #000;
+    box-shadow: 0 0 0 3px #333333;
+    border: 5px solid #9c4a00;
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=95640), pointer;
+    font-size: 60px;
+}
+
+/*Super Mario background added. Changed all text to a pixel font from Google Fonts and bolded the text*/
+body {
+    background-image: url("https://www.pixelstalk.net/wp-content/uploads/images3/Mario-Computer-Backgrounds.png");
+    font-family: 'Press Start 2P';font-size: 22px;
+    font-weight: bold;
+}
+
+/*Rounded the restart button and added a transition for a hover color change*/
+.game--restart {
+    transition-duration: 0.4s;
+    border-radius: 8px;
+}
+
+/*Button changes from white to red on hover*/
+.game--restart:hover {
+    background-color: crimson;
+    color: white
+}
+
+/*Text outline added like before. Setting title and status text to white*/
+h1, h2 {
+    
+    color: white;
+    text-shadow: 
+        3px 3px 0 #000,
+        -3px 3px 0 #000,
+        -3px -3px 0 #000,
+        3px -3px 0 #000;
+}
