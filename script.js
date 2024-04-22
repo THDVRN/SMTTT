@@ -8,6 +8,7 @@ let currentPlayer = "X";
 
 //Establishes our message varriables
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+const drawMessage = () => `Game ended in a draw!`;
 const winningMessage = () => `Player ${currentPlayer} has won!`;
 
 //Creating variable for reset button
@@ -86,6 +87,15 @@ function handleResultValidation() {
     //If the above loop determines a win, this will set the status message to show who won and end the game
     if (gameWon) {
         statusDisplay.innerHTML = winningMessage();
+        gameActive = false;
+        return;
+    }
+
+    //Sets a draw when there is no winner and the gameState has all values
+    let roundDraw = !gameState.includes("");
+    //If draw is determined. Displays draw message and ends the game
+    if (roundDraw) {
+        statusDisplay.innerHTML = drawMessage();
         gameActive = false;
         return;
     }
